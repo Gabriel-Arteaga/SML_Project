@@ -32,6 +32,15 @@ In this project, we were provided with a dataset comprising various features of 
 </div>
 
 ## Data Analysis
+Additionally, alongside the classification task, we were assigned to address specific inquiries based on the data, leading to a comprehensive analysis. The questions posed were as follows:
+
+* **Do men or women dominate speaking roles in Hollywood movies?**
+  Our analysis revealed that males comprised 68% of all actors with speaking roles, while females accounted for only 21% of the total words spoken in movies.
+<p align="center">
+  <img src="/data/readme_pics/question1.png" width="95%"  />
+</p>
+<p align="center">
+  
 ## Feature Engineering
 ## Model Tuning
 ## Results
