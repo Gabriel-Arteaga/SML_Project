@@ -41,23 +41,42 @@ Additionally, alongside the classification task, we were assigned to address spe
 </p>
 <p align="center">
   
+* **Has gender balance in speaking roles changed over time?**  
+  Our findings indicate that gender balance in speaking roles has become more homogeneous over the decades, particularly evident during the 2010s. However, despite this trend, the proportion of female share of words in movies remains low, at 24%, signifying a significant underrepresentation.
+  <p align="center">
+  <img src="/data/readme_pics/question2.png" width="95%"  />
+</p>
+<p align="center">
+
+* **Do films in which men do more speaking make a lot more money than films in which women
+speak more?**
+Our analysis indicates that movies where male actors have the majority word count tend to generate higher average gross revenue compared to those where female actors dominate the word count. However, this trend seems to deviate as we approach the 2010s.
+  <p align="center">
+  <img src="/data/readme_pics/question3.png" height= 220px width="95%"  />
+</p>
+<p align="center">  
+  
 ## Feature Engineering
+To derive additional insights from our dataset, we employed feature engineering techniques to create new attributes based on our original variables. These techniques encompassed various methods such as creating shares (e.g., Female word share), aggregating data (e.g., Decade), and calculating differences (e.g., Age lead vs. co-lead). From our initial set of 13 features, we expanded our feature set to 40 attributes. Subsequently, we conducted comprehensive testing to identify the most relevant features for our respective models. Feature selection was carried out through a combination of manual methods (e.g., permutation testing) and automated approaches (e.g., `ExhaustiveFeatureSelector` & `SequentialFeatureSelector`).
+
 ## Model Tuning
+We performed hyperparameter tuning and feature selection for each model within our model family, including Logistic Regression, Boosting, kNN, and Discriminant Analysis. As our primary project objective is to identify the best-performing model for "production," our focus lies on optimizing each model individually rather than benchmarking them against each other. Consequently, we applied different tuning efforts for the different models.
+
+To facilitate hyperparameter optimization, we employed automated tools such as `RandomizedSearchCV` and `GridSearchCV`. For simpler models like kNN, we utilized GridSearch due to the manageable computational requirements for tuning parameters such as k. Conversely, for more complex models like XGBoost, we initially utilized RandomizedSearch to prune the parameter search space. Subsequently, after narrowing down the search space, we employed GridSearch to exhaustively identify optimal hyperparameters.
 ## Results
-### Best models from each family, and naive classifier:
-| Metric           | Log. reg.      | QDA            | kNN            | XGB            | Naive          |
-|------------------|---------------|----------------|----------------|----------------|----------------|
-| Avg. accuracy    | .889          | .925           | .885           | .911           | .756           |
-| Acc., min-max    | .861 - 899    | .885 - .955    | .875 - .908    | .885 - .947    | n/a            |
-| Acc. fem / male  | .681 / .957   | .831 / .952    | .682 / .952    | .709 / .977    | 1. / .0        |
-| Train accuracy   | .890          | .935           | .912           | .984           | n/a            |
-| N features       | 14            | 13             | 5              | 12             | n/a            |
+In our analysis, we aimed to identify the model that best generalizes to new data, prioritizing criteria such as high average accuracy in cross-validation, minimal spread across different folds, balanced accuracy for both classes, and simplicity in terms of features. Comparing the performance of various models, we found that more flexible, non-linear models like QDA and boosting outperformed simpler, linear ones and kNN. Notably, QDA emerged as the top-performing model overall within its family. Despite concerns of overfitting in some models, particularly XGB, QDA demonstrated robustness and accuracy. Feature engineering and selection proved to be crucial in improving model performance, highlighting core attributes such as Number words female and Number of words lead. While automated tools were helpful, manual refinement was also essential for optimal results. Despite computational constraints, our approach successfully identified a high-performing model suitable for production deployment.  
 
-
+<div align="center">
+  
+| Metric           | Log. reg.  | QDA       | kNN       | XGB       |
+|------------------|------------|-----------|-----------|-----------|
+| Avg. accuracy   | 0.889       | 0.925      | 0.885      | 0.911      |
+| Acc., min-max   | 0.861 - 0.899 | 0.885 - 0.955 | .875 - .908 | 0.885 - 0.947 |
+| Acc. fem / male | 0.681 / 0.957 | 0.831 / 0.952 | 0.682 / 0.952 | 0.709 / 0.977 |
+| Train accuracy  | 0.890       | 0.935      | 0.912      | 0.984      |
+| N features      | 14         | 13        | 5         | 12        |
+</div> 
 
 ## Project members
-[Gabriel Arteaga](https://github.com/Gabriel-Arteaga)   
-[Jakob Nyström](https://github.com/j-nystrom)  
-[Inga Wohlert](https://github.com/IngaKristin)  
-[Alexander Sabelström](https://github.com/Sabelz)
+| [Gabriel Arteaga](https://github.com/Gabriel-Arteaga)  | [Jakob Nyström](https://github.com/j-nystrom)  |  [Inga Wohlert](https://github.com/IngaKristin)  |  [Alexander Sabelström](https://github.com/Sabelz) |
 
