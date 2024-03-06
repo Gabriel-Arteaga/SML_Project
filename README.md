@@ -44,6 +44,15 @@ Additionally, alongside the classification task, we were assigned to address spe
 ## Feature Engineering
 ## Model Tuning
 ## Results
+| Metric           | Log. reg.      | QDA            | kNN            | XGB            | Naive          |
+|------------------|---------------|----------------|----------------|----------------|----------------|
+| Avg. accuracy    | .889          | .925           | .885           | .911           | .756           |
+| Acc., min-max    | .861 - 899    | .885 - .955    | .875 - .908    | .885 - .947    | n/a            |
+| Acc. fem / male  | .681 / .957   | .831 / .952    | .682 / .952    | .709 / .977    | 1. / .0        |
+| Train accuracy   | .890          | .935           | .912           | .984           | n/a            |
+| N features       | 14            | 13             | 5              | 12             | n/a            |
+
+
 
 ## Project members
 [Gabriel Arteaga](https://github.com/Gabriel-Arteaga)   
