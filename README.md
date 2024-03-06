@@ -44,6 +44,7 @@ Additionally, alongside the classification task, we were assigned to address spe
 ## Feature Engineering
 ## Model Tuning
 ## Results
+### Best models from each family, and naive classifier:
 | Metric           | Log. reg.      | QDA            | kNN            | XGB            | Naive          |
 |------------------|---------------|----------------|----------------|----------------|----------------|
 | Avg. accuracy    | .889          | .925           | .885           | .911           | .756           |
